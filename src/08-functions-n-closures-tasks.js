@@ -70,21 +70,7 @@ function getPowerFunction(exponent) {
  *   getPolynom()      => null
  */
 function getPolynom() {
-  let coefficients;
-  if (coefficients.length === 0) {
-    return null;
-  }
-
-  // eslint-disable-next-line func-names
-  return function (x) {
-    let result = 0;
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < coefficients.length; i++) {
-      // eslint-disable-next-line no-restricted-properties
-      result += coefficients[i] * Math.pow(x, i);
-    }
-    return result;
-  };
+  throw new Error('Not implemented');
 }
 
 
@@ -172,17 +158,8 @@ function retry(func, attempts) {
  * cos(3.141592653589793) ends
  *
  */
-function logger(func, logFunc) {
-  // eslint-disable-next-line func-names
-  return function (...args) {
-    const argsString = args.map((arg) => JSON.stringify(arg)).join(', ');
-
-    logFunc(`${func.name}(${argsString}) starts`);
-    const result = func.apply(this, args);
-    logFunc(`${func.name}(${argsString}) ends`);
-
-    return result;
-  };
+function logger(/* func, logFunc */) {
+  throw new Error('Not implemented');
 }
 
 
@@ -225,6 +202,7 @@ function partialUsingArguments(fn, ...args1) {
  */
 function getIdGeneratorFunction(startFrom) {
   let id = startFrom;
+  // eslint-disable-next-line func-names
   return function () {
     // eslint-disable-next-line no-plusplus
     return id++;
