@@ -65,28 +65,8 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(width, height) {
-  let str = '';
-
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i <= height; i++) {
-    // eslint-disable-next-line no-plusplus
-    for (let j = 0; j <= width; j++) {
-      if (i === 0) {
-        str += '-';
-      } else if (i === height) {
-        str += '_';
-      } else if (j === 0) {
-        str += '|';
-      } else if (j === width) {
-        str += '|\n';
-      } else {
-        str += ' ';
-      }
-    }
-  }
-
-  return str;
+function getRectangleString(/* width, height */) {
+  throw new Error('Not implemented');
 }
 
 
